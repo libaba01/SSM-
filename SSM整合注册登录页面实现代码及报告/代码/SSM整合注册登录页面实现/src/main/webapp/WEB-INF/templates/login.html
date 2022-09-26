@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>登录</title>
+  <link rel="stylesheet" href="css/login.css"/>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+<div id="login-box">
+  <h1>Login</h1>
+  <form th:action="@{/testlogin}" action="login_fail.jsp" method="post">
+    <div class="form">
+      <div class="item">
+        <i class="fa fa-github-alt" style="font-size:24px"></i>
+        <input type="text" placeholder="Username" name="username">
+      </div>
+      <div class="item">
+        <i class="fa fa-search" style="font-size:24px"></i>
+        <input type="text" placeholder="Password" name="password">
+      </div>
+      <button>Login</button>
+    </div>
+  </form>
+
+
+</div>
+
+</body>
+</html>

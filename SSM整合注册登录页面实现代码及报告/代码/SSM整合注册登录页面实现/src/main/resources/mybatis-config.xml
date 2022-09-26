@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--
+       mybatis核心配置文件中的标签顺序
+       properties?,settings?,typeAliases?,
+       typeHandlers?,objectFactory?,objectWrapperFactory?,
+       reflectorFactory?,plugins?,environments?,databaseIdProvider?,mappers?
+    -->
+
+    <properties resource="jdbc.properties"></properties>
+    <!--配置数据库环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--引入映射文件-->
+    <mappers>
+        <!--引入以包为单位的文件
+               mapper接口所在的包必须和映射文件所在的包名一致
+               mapper接口和映射文件的名字一致
+               -->
+        <package name="com.libaba.dao"/>
+    </mappers>
+</configuration>

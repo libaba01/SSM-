@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>注册</title>
+
+  <link rel="stylesheet" type="text/css" href="css/register.css">
+
+</head>
+<body background="image/four.jpg" style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
+<!--头部-->
+<div id="reg_header">
+  <div class="reg_h_center">
+    <div class="reg_h_left">
+      <h3>欢迎注册</h3>
+    </div>
+  </div>
+</div>
+<!--表单内容-->
+<div class="reg_back">
+  <div class="reg_left">
+    <p>新用户注册</p>
+    <p>USER REGISTER</p>
+  </div>
+  <div class="reg_center">
+    <div class="reg_form">
+      <form th:action="@{/testregister}" method="post">
+        <table>
+          <tr>
+            <td class="td_left"><label for="username">用户名</label></td>
+            <td class="td_right"><input type="text" name="username" placeholder="请输入用户名"
+                                        id="username"></td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="password">密码</label></td>
+            <td class="td_right"><input type="password" name="password" placeholder="请输入密码"
+                                        id="password"></td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="email">Email</label></td>
+            <td class="td_right"><input type="email" name="email" placeholder="请输入Email" id="email">
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="telephone">手机号码</label></td>
+            <td class="td_right"><input type="text" name="telephone" placeholder="请输入您的手机号" id="telephone"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="right"><input type="submit" value="注册" id="btn_sub"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <div class="reg_right">
+    <p>已有账号?<a th:href="@{/login}">立即登录</a></p>
+  </div>
+</div>
+</body>
+</html>
